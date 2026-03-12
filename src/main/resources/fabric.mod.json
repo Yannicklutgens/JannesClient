@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "jannesclient",
+  "version": "${version}",
+  "name": "JannesClient",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/jannesclient/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "nl.jannes64.jannesclient.client.MainDataGenerator"
+    ],
+    "client": [
+      "nl.jannes64.jannesclient.client.MainClient"
+    ],
+    "main": [
+      "nl.jannes64.jannesclient.Main"
+    ]
+  },
+  "mixins": [
+    "jannesclient.mixins.json",
+    {
+      "config": "jannesclient.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
