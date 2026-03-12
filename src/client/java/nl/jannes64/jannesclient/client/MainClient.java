@@ -2,7 +2,10 @@ package nl.jannes64.jannesclient.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.TitleScreen;
+import net.minecraft.client.option.GameOptions;
+import net.minecraft.sound.SoundCategory;
 import nl.jannes64.jannesclient.client.gui.CustomTitleScreen;
 
 public class MainClient implements ClientModInitializer {
@@ -16,5 +19,8 @@ public class MainClient implements ClientModInitializer {
 //                }
 //            }
 //        });
+
+        GameOptions gameOptions = MinecraftClient.getInstance().options;
+        gameOptions.getSoundVolumeOption(SoundCategory.MUSIC).setValue(0.0);
     }
 }
