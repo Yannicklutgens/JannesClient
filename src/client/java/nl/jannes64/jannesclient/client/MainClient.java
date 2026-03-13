@@ -21,6 +21,8 @@ public class MainClient implements ClientModInitializer {
 //        });
 
         GameOptions gameOptions = MinecraftClient.getInstance().options;
-        gameOptions.getSoundVolumeOption(SoundCategory.MUSIC).setValue(0.0);
+        if (gameOptions != null) {
+            gameOptions.getSoundVolumeOption(SoundCategory.MUSIC).setValue(0.0);
+        }
     }
 }
